@@ -6,7 +6,6 @@
     import org.slf4j.LoggerFactory;
     IDEA自动引入的时候是错的
 
-
 3. 通过WinSCP无法手动将文件复制到目录，权限不够
     利用chown改变所有者：
 

@@ -45,7 +45,7 @@ public class FtpUtil {
                 LOG.info("Got {}, with name: {}, with detail: {}",sftpATTRS.getPermissionsString().startsWith("d") ? "FOLDER" : "FILE" , entry.getFilename(), sftpATTRS);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOG.error("Exception during FTP file search", e);
         } finally {
             closeChannel(sftp);
             closeChannel(channel);
