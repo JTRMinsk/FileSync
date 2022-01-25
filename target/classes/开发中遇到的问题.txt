@@ -1,0 +1,27 @@
+1. IDEA 2021.3 已经不能使用spring assistant需要和另一个插件来辅助
+    https://github.com/eltonsandre/intellij-spring-assistant/tree/main/disthttps://github.com/eltonsandre/intellij-spring-assistant/tree/main/dist
+
+2. Slf4J 类import时要用
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory;
+    IDEA自动引入的时候是错的
+
+
+3. 通过WinSCP无法手动将文件复制到目录，权限不够
+    利用chown改变所有者：
+
+    对Document/ 目录下的所有文件与子目录执行相同的所有者变更，修改所有者为users用户组的username用户
+
+    chown -R username:users Document/
+    username:users users用户组的username，用户组参数不是必须有。下面这样也是可以的：
+
+    chown -R username:users Document/
+
+    实例：将文件夹所有者更改为WinScp登录用户
+    sudo chown -R salim:salim /home/salim/ftp_root/backuproot
+
+    https://www.cnblogs.com/jinmao/p/6665858.html
+
+4. 当XShell 和 WinScp能够连接服务器的时候,commons-net包中的FTP功能却不能使用
+
+5. Linux 文件系统中如何判断是文件还是目录, "." 和 ".." 如何区别出来？
