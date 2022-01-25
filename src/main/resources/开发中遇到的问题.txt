@@ -1,5 +1,5 @@
 1. IDEA 2021.3 已经不能使用spring assistant需要和另一个插件来辅助
-    https://github.com/eltonsandre/intellij-spring-assistant/tree/main/disthttps://github.com/eltonsandre/intellij-spring-assistant/tree/main/dist
+    https://github.com/eltonsandre/intellij-spring-assistant/tree/main/dist
 
 2. Slf4J 类import时要用
     import org.slf4j.Logger;
