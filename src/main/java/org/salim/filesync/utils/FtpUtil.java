@@ -75,4 +75,52 @@ public class FtpUtil {
         }
     }
 
+    private static void lsWithR (ChannelSftp sftp, Vector<?> vector, String dir) throws SftpException {
+        for (Object item:vector) {
+            ChannelSftp.LsEntry entry = (ChannelSftp.LsEntry) item;
+            SftpATTRS sftpATTRS = entry.getAttrs();
+            if (".".equalsIgnoreCase(entry.getFilename()) || "..".equalsIgnoreCase(entry.getFilename())) {
+
+            } else {
+                if (sftpATTRS.getPermissionsString().startsWith("d")) {
+                    LOG.info("Got remote folder: {}", entry.getFilename());
+                    String deeperDir = dir + "/" + entry.getFilename();
+                    lsWithR(sftp, sftp.ls(deeperDir), deeperDir);
+                } else {
+                    LOG.info("Got remote file: {}", entry.getFilename());
+                }
+            }
+        }
+    }
+
+    public static void listAllSubFiles(String host, int port, String username, final String password, String dir) {
+        ChannelSftp sftp = null;
+        Channel channel = null;
+        Session sshSession = null;
+        try {
+            JSch jsch = new JSch();
+            jsch.getSession(username, host, port);
+            sshSession = jsch.getSession(username, host, port);
+            sshSession.setPassword(password);
+            Properties sshConfig = new Properties();
+            sshConfig.put("StrictHostKeyChecking", "no");
+            sshSession.setConfig(sshConfig);
+            sshSession.connect();
+            LOG.debug("Session connected!");
+            channel = sshSession.openChannel("sftp");
+            channel.connect();
+            LOG.debug("Channel connected!");
+            //协议为SFTP
+            sftp = (ChannelSftp) channel;
+            Vector<?> vector = sftp.ls(dir);
+            lsWithR(sftp, vector, dir);
+        } catch (Exception e) {
+            LOG.error("Exception during FTP file search", e);
+        } finally {
+            closeChannel(sftp);
+            closeChannel(channel);
+            closeSession(sshSession);
+        }
+    }
+
 }
