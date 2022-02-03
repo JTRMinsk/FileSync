@@ -40,6 +40,7 @@ public class FtpUtil {
             sftp = (ChannelSftp) channel;
             Vector<?> vector = sftp.ls(dir);
             for (Object item:vector) {
+                //得到的文件单位是lsEntry
                 ChannelSftp.LsEntry entry = (ChannelSftp.LsEntry) item;
                 SftpATTRS sftpATTRS = entry.getAttrs();
                 if (".".equalsIgnoreCase(entry.getFilename()) || "..".equalsIgnoreCase(entry.getFilename())) {

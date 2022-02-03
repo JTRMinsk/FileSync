@@ -27,4 +27,4 @@
 
 6. Windows系统上开FTP server之后文件目录的处理方式
 
-7. 如何判断文件是否改动过？ 哈希/update date？
+7. 如何判断文件是否改动过？ 哈希（MD5和SHA-1）/update date？
