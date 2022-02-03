@@ -42,7 +42,11 @@ public class FtpUtil {
             for (Object item:vector) {
                 ChannelSftp.LsEntry entry = (ChannelSftp.LsEntry) item;
                 SftpATTRS sftpATTRS = entry.getAttrs();
-                LOG.info("Got {}, with name: {}, with detail: {}",sftpATTRS.getPermissionsString().startsWith("d") ? "FOLDER" : "FILE" , entry.getFilename(), sftpATTRS);
+                if (".".equalsIgnoreCase(entry.getFilename()) || "..".equalsIgnoreCase(entry.getFilename())) {
+
+                } else {
+                    LOG.info("Got {}, with name: {}, with detail: {}",sftpATTRS.getPermissionsString().startsWith("d") ? "FOLDER" : "FILE" , entry.getFilename(), sftpATTRS);
+                }
             }
         } catch (Exception e) {
             LOG.error("Exception during FTP file search", e);

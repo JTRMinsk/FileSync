@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class FileUtil {
 
-    public static List<File> listAllSubFoldersInBackup (File backupFolder) {
+    public static List<File> listAllSubFilesInBackup(File backupFolder) {
         FileFilter filter = new FileFilter() {
             @Override
             public boolean accept(File pathname) {

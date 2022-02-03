@@ -23,4 +23,8 @@
 
 4. 当XShell 和 WinScp能够连接服务器的时候,commons-net包中的FTP功能却不能使用
 
-5. Linux 文件系统中如何判断是文件还是目录, "." 和 ".." 如何区别出来？
+5. Linux 文件系统中如何判断是文件还是目录, "." 和 ".." 如何区别出来？ 通过ls得到多个LsEntry,entry里面有attributes,文件还是目录通过permission string的开头得知/所有的ls结果都会有. 和 ..
+
+6. Windows系统上开FTP server之后文件目录的处理方式
+
+7. 如何判断文件是否改动过？ 哈希/update date？

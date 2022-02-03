@@ -1,11 +1,10 @@
 1. IDEA 2021.3 已经不能使用spring assistant需要和另一个插件来辅助
-    https://github.com/eltonsandre/intellij-spring-assistant/tree/main/disthttps://github.com/eltonsandre/intellij-spring-assistant/tree/main/dist
+    https://github.com/eltonsandre/intellij-spring-assistant/tree/main/dist
 
 2. Slf4J 类import时要用
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
     IDEA自动引入的时候是错的
-
 
 3. 通过WinSCP无法手动将文件复制到目录，权限不够
     利用chown改变所有者：
@@ -24,4 +23,8 @@
 
 4. 当XShell 和 WinScp能够连接服务器的时候,commons-net包中的FTP功能却不能使用
 
-5. Linux 文件系统中如何判断是文件还是目录, "." 和 ".." 如何区别出来？
+5. Linux 文件系统中如何判断是文件还是目录, "." 和 ".." 如何区别出来？ 通过ls得到多个LsEntry,entry里面有attributes,文件还是目录通过permission string的开头得知/所有的ls结果都会有. 和 ..
+
+6. Windows系统上开FTP server之后文件目录的处理方式
+
+7. 如何判断文件是否改动过？ 哈希/update date？

@@ -31,7 +31,7 @@ public class FileSynchronizationFunction {
             System.out.println(disk.getAbsolutePath() + " has free space: " + disk.getFreeSpace() / 1024 / 1024 / 1024 + "GB" + " total space: " + disk.getTotalSpace() / 1024 / 1024 / 1024 + "GB");
         }
 
-        List<File> subFolders = FileUtil.listAllSubFoldersInBackup(new File(backupFilePath));
+        List<File> subFolders = FileUtil.listAllSubFilesInBackup(new File(backupFilePath));
 
 
 
