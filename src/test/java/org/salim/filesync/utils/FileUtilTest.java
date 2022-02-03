@@ -15,5 +15,6 @@ public class FileUtilTest {
         FileUtil.getAllFileHash(files);
         //just changing name will not update hash
         //duplicate will have same hash
+        //文件的标记应该为 机器名称-os名称-backup根目录下的文件名,可以做map
     }
 }
