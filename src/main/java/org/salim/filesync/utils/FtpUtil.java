@@ -13,7 +13,7 @@ import java.util.Vector;
  * @author Salim
  *
  */
-public class FtpUtil {
+public class FtpUtil extends BackupUtils{
     private static final Logger LOG = LoggerFactory.getLogger(FileUtil.class);
 
 
@@ -122,5 +122,7 @@ public class FtpUtil {
             closeSession(sshSession);
         }
     }
+
+
 
 }
