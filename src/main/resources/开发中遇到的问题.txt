@@ -32,3 +32,10 @@
 8. .gitignore一般如何配置？
 
 9. FTP相关代码:https://www.jianshu.com/p/79dae0e59d29
+
+10. 什么种类的文件不会变？ 什么种类的文件长变动？
+
+11. 使用数据库存储文件路径 和 hash映射
+    https://zhuanlan.zhihu.com/p/64080934
+    https://blog.csdn.net/qq_36609501/article/details/85470236
+    https://www.cnblogs.com/cure/p/14152596.html
