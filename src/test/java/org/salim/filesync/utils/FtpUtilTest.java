@@ -6,7 +6,7 @@ public class FtpUtilTest {
 
     @Test
     public void login() throws Exception{
-        FtpUtil.listAllFolderNames("192.168.3.5", 22, "salim", "JFK181235", "/home/salim/ftp_root/backuproot");
+        //FtpUtil.listAllFolderNames("192.168.3.5", 22, "salim", "JFK181235", "/home/salim/ftp_root/backuproot");
         FtpUtil.listAllSubFiles("192.168.3.5", 22, "salim", "JFK181235", "/home/salim/ftp_root/backuproot");
     }
 }

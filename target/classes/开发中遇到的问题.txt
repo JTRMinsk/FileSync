@@ -28,3 +28,7 @@
 6. Windows系统上开FTP server之后文件目录的处理方式
 
 7. 如何判断文件是否改动过？ 哈希（MD5和SHA-1）/update date？
+
+8. .gitignore一般如何配置？
+
+9. FTP相关代码:https://www.jianshu.com/p/79dae0e59d29

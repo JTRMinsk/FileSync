@@ -4,6 +4,7 @@ import com.jcraft.jsch.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -83,11 +84,19 @@ public class FtpUtil extends BackupUtils{
 
             } else {
                 if (sftpATTRS.getPermissionsString().startsWith("d")) {
-                    LOG.info("Got remote folder: {}", entry.getFilename());
                     String deeperDir = dir + "/" + entry.getFilename();
+                    LOG.info("Got remote folder: {}",deeperDir);
                     lsWithR(sftp, sftp.ls(deeperDir), deeperDir);
                 } else {
-                    LOG.info("Got remote file: {}", entry.getFilename());
+                    LOG.info("Got remote file: {}", dir + "/" + entry.getFilename());
+                    InputStream inputStream = sftp.get(dir + "/" + entry.getFilename());
+                    String hashCode;
+                    try {
+                        hashCode = getFileHash(inputStream);
+                    } catch (Exception e) {
+                        hashCode = "UNKNOWN";
+                    }
+                    LOG.info("Got file hash: {}", hashCode);
                 }
             }
         }
@@ -122,7 +131,5 @@ public class FtpUtil extends BackupUtils{
             closeSession(sshSession);
         }
     }
-
-
 
 }
