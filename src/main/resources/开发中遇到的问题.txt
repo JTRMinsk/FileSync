@@ -42,3 +42,8 @@
 
 12. 数据库配置远端能够连接，重要
     https://zhuanlan.zhihu.com/p/28102425
+
+13. 数据库连接基本
+    https://blog.csdn.net/kiwangruikyo/article/details/80146058
+    https://blog.csdn.net/I_m_Groot/article/details/83443603
+    https://www.cnblogs.com/dadian/p/11938707.html
