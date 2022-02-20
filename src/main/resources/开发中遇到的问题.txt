@@ -40,5 +40,5 @@
     https://blog.csdn.net/qq_36609501/article/details/85470236
     https://www.cnblogs.com/cure/p/14152596.html
 
-12. 数据库配置远端连接，重要
+12. 数据库配置远端能够连接，重要
     https://zhuanlan.zhihu.com/p/28102425
