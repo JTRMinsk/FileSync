@@ -47,3 +47,7 @@
     https://blog.csdn.net/kiwangruikyo/article/details/80146058
     https://blog.csdn.net/I_m_Groot/article/details/83443603
     https://www.cnblogs.com/dadian/p/11938707.html
+
+14. 如何在git项目中去掉target下的.class文件？？
+
+15. insert 语法
