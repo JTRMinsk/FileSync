@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 /**
  * @author Salim
@@ -16,7 +17,7 @@ public class FileTrackerDAO {
     private static final Logger LOG = LoggerFactory.getLogger(FileTrackerDAO.class);
 
     private String dbType = "com.mysql.jdbc.Driver";
-    private String dbAddress = "jdbc:mysql://192.168.3.5:3306/";
+    private String dbAddress = "jdbc:mysql://192.168.196.214:3306/";
     private String dbOperator = "ftpfilemanager";
     private String dbPassword = "181235";
     private String schema = "filemanage";
@@ -48,6 +49,12 @@ public class FileTrackerDAO {
                 connection.close();
             }
         }
+    }
+
+    public List<FileDescription> checkFileTracker() throws SQLException {
+
+
+        return null;
     }
 
 
